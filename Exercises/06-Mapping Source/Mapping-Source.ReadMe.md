@@ -22,8 +22,7 @@
     ```
 
     - Open a browser and navigate to the following two pages:
-
-        http://localhost:5000/hello.html
+        + <http://localhost:5000/hello.html>
       
 2. Build the image using Docker client
     - Build the docker image, using -t to tag the image
@@ -48,7 +47,7 @@
   
 4. Run the app from a browser
     - Use localhost with port 5000 to open the web app
-        + `http://localhost:5000/hello.html`
+        + <http://localhost:5000/hello.html>
 
 5. Change the content of the static HTML file
     - Then refresh the web browser
@@ -77,8 +76,7 @@
     ```
 
     - Open a browser and navigate to the following page:
-
-        http://localhost:5000
+        + <http://localhost:5000>
 
 2. Change the content of the Index method on HomeController.
     - You should observe the web server restarted in the Terminal window.

@@ -55,4 +55,4 @@
     docker run -d -p 80:80 --name web1 nginx
     ```
 
-    - Open a browser to see the web server: http://localhost
+    - Open a browser to see the web server: <http://localhost>

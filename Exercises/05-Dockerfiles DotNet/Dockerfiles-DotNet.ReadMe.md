@@ -11,9 +11,9 @@
 
 2. Prepare your system for .NET Core
     - Mac:
-        + To remove a prior version of .NET Core from Mac OS X, see here:
+        + To remove a prior version of .NET Core from Mac OS X, you can use this tool:
 
-          https://gist.github.com/tonysneed/641de6ff27f255af3e476c29300fcb10
+          <http://www.corecode.at/uninstallpkg>
 
         + Install prerequisites:
 
@@ -29,10 +29,9 @@
 
 3. Download and install the **.NET Core SDK Installer** for your OS from here:
 
-    https://github.com/dotnet/cli
+    <https://www.microsoft.com/net/core>
 
-    + If you cannot open the installer on the Mac due to security reasons,
-      open Settings, Security and Privacy, and click "Open Anyway".
+    + Click on the "official installer" link to install the latest stable SDK.
 
 4. Open a terminal in the Before/DotNetCore folder.
     - Restore packages
@@ -54,8 +53,7 @@
     ```
 
     - Open a browser and navigate to the following page:
-
-        http://localhost:5000
+        + <http://localhost:5000>
     
 ## Part B: Deploy the web app using Docker
     
@@ -109,12 +107,12 @@
   
 4. Run the app from a browser
     - Use localhost with port 5000 to open the web app
-        + `http://localhost:5000`
+        + <http://localhost:5000>
 
 5. Start an additional container
     - Replace the port mapping: `-p 5001:5000`
     - Append 2 to the name
-    - Run the web app: `http://localhost:5001` 
+    - Run the web app: <http://localhost:5001>
     - See all the running containers: `docker ps`
 
 6. If you wish, you may stop and remove both containers
