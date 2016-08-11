@@ -56,3 +56,11 @@
     ```
 
     - Open a browser to see the web server: <http://localhost>
+    - If you are using Docker Toolbox, use docker-machine to
+      get the IP address for the VM running under VirtualBox.
+      + Then use IP address instead of localhost.
+
+    ```
+    docker-machine ip
+    ```
+    
