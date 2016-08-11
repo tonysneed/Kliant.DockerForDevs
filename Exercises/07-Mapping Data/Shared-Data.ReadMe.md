@@ -52,21 +52,22 @@
     docker inspect my-mongo
     ```
 
-3. Stop the my-mongo container
+3. Import customer data using MongoChef
+
+4. Stop the my-mongo container
 
     ```
     docker stop my-mongo
     ```
 
-4. Import customer data using MongoChef
-
 5. You can add another container with a different name.
-    - Notice that the previously imported data is still available
-        + This is because data is mapped to a common directory on the VM
 
     ```
     docker run -d -p 27017:27017 --name my-mongo2 -v mongo-data:/data/db mongo
     ```
+
+    - Notice that the previously imported data is still available
+        + This is because data is mapped to a common directory on the VM
 
     - When you're done, go ahead and remove the second container.
 
