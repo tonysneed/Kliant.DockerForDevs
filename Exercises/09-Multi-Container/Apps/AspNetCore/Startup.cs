@@ -14,6 +14,7 @@ namespace DockerComposeDemo
         {
             // Set up configuration sources.
             var builder = new ConfigurationBuilder();
+            builder.SetBasePath(env.ContentRootPath);
             if (env.IsDevelopment())
             {
                 builder.AddJsonFile("Config/appsettings.json");
@@ -22,7 +23,6 @@ namespace DockerComposeDemo
             {
                 builder.AddJsonFile("Config/appsettings.staging.json");
             }
-            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
