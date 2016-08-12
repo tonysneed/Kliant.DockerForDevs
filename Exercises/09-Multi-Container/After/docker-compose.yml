@@ -22,12 +22,12 @@ services:
     networks:
       - aspnetcore-network
 
-  aspnetcore3:
+  aspnetcore:
     build:
-      context: ./DockerComposeDemo/src/DockerComposeDemo
+      context: ./AspNetCore
       dockerfile: aspnetcore.dockerfile
     volumes:
-      - ./DockerComposeDemo/src/DockerComposeDemo:/app
+      - ./AspNetCore:/app
     ports:
      - "5000:5000"
     networks:

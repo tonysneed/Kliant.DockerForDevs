@@ -106,7 +106,7 @@ with a **named volume**, and that you imported customer data from a JSON file.*
     - After building image, you can view the images: `docker images`
     
     ```
-    docker build -f aspnetcore.dockerfile -t tonysneed/aspnetcore .
+    docker build -f aspnetcore.dockerfile -t aspnetcore .
     ```
 
 2. Create and run docker containers in a bridge network
@@ -125,8 +125,8 @@ with a **named volume**, and that you imported customer data from a JSON file.*
     ```
     docker network create --driver bridge my_network
     docker run -d --net=my_network --name my-mongodb -v mongo-data:/data/db mongo
-    docker run -d --net=my_network --name mongoose -v $(pwd):/var/www tonysneed/mongoose
-    docker run -d -p 5000:5000 --net=my_network --name aspnetcore -v $(pwd):/app tonysneed/aspnetcore
+    docker run -d --net=my_network --name mongoose mongoose
+    docker run -d -p 5000:5000 --net=my_network --name aspnetcore aspnetcore
     ```
 
 4. Run the app from a browser
@@ -139,7 +139,9 @@ with a **named volume**, and that you imported customer data from a JSON file.*
 ## Part C: Docker Compose
 
 1. Finally we get to use docker-compose for running multiple containers as a unit
-    - Add a `docker-compose.yml` file
+    - Add a `docker-compose.yml` file to the `Apps` root directory
+        + You'll find a completed example in the `After` directory
+
 2. Add a `networks` section to declare a custom bridge network
   
     ```
@@ -183,19 +185,18 @@ with a **named volume**, and that you imported customer data from a JSON file.*
 
         aspnetcore:
         build:
-            context: ./DockerComposeDemo/src/DockerComposeDemo
+            context: ./AspNetCore
             dockerfile: aspnetcore.dockerfile
         volumes:
-            - ./DockerComposeDemo/src/DockerComposeDemo:/app
+            - ./AspNetCore:/app
         ports:
         - "5000:5000"
         networks:
             - aspnetcore-network
     ```
   
-5. Open the Docker QuickStart Terminal and use `docker-compose` commands
-    - Get help to see the list of available commands
-    - `cd` into the directory where the `docker-compose.yml` file is located
+5. Open a Terminal in the `App` directory where the `docker-compose.yml` file is located
+    - Enter `docker-compose --help` to see the list of available commands
     - Bring up the containers with `docker-compose up`
 
 6. The first time you will need to see the mongo database with `Data/customers.json`

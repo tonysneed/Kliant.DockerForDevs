@@ -33,7 +33,7 @@ namespace DockerComposeDemo
         {
             // Configure options
             services.AddOptions();
-            services.Configure<Settings>(o => Configuration.GetSection("Settings"));
+            services.Configure<Settings>(Configuration.GetSection("Settings"));
 
             // Add respositories
             services.AddTransient<ICustomersRepository, CustomersRepository>();
